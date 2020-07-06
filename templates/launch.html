@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
-<link rel="stylesheet" href="{{url_for('static', filename='leaflet.css')}}">
-<script src="{{url_for('static', filename='leaflet.js')}}"></script>
-    <title>{{launch[1]}}</title>
+<link rel="stylesheet" href="https://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="https://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<title>{{launch[1]}}</title>
 </head>
 <body>
     <h1>{{launch[1]}}</h1>
@@ -34,6 +34,8 @@
     var long = {{ launch[5][1] }};
     
     var map = L.map('map').setView([lat, long], 5);
+    L.marker([lat, long]).addTo(map)
+
 
 
     
