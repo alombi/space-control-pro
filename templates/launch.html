@@ -13,11 +13,9 @@
     <h2 class="subtitle">{{ launch[6] }} - {{ status }}</h2>
     <div style="text-align: left;">
     <h2>Quick Notes</h2>
-    <ul>
-      <li><p>Date: {{ launch[7] }}</p></li>
-      <li><p>State: {{ state }}</p></li>
-      <li><p>Agency: {{ launch[9]["name"]}}</p></li>
-    </ul>
+    <p>Date: {{ launch[7] }}</p>
+    <p>State: {{ state }}</p>
+    <p>Agency: {{ launch[9]["name"]}}</p>
     <br>
     <h2>Description</h2>
     <p>{{ launch[3] }}</p>
@@ -35,7 +33,8 @@
     var lat = {{ launch[5][0] }};
     var long = {{ launch[5][1] }};
     
-    var map = L.map('map').setView([lat, long], 6);
+    var map = L.map('map').setView([lat, long], 5);
+
 
     
       var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
