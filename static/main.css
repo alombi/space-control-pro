@@ -1,0 +1,180 @@
+#navbar{
+    display: none;
+}
+button{
+    border-style: none;
+    background: none;
+}
+hr{
+    border: 1px solid #474747;
+}
+body{
+    background-color: #1A202C;
+    color: white;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 5%;
+    overflow-x: hidden;
+}
+p{
+    font-size: 21px;
+    background-color: #1A202C;
+}
+h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+ion-icon {
+    font-size: 26px;
+    font-weight: bold;
+  }
+.icons {
+      color:black;
+  }
+.navbar{
+    display: inline;
+    list-style-type: none;
+    overflow: hidden;
+}
+.navbar a{
+    color: #AAAAAA;
+    font-size: smaller;
+    text-decoration: none;
+}
+#active {
+    color: #FFFFFF;
+}
+.leftItem{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 2px 10px;
+    text-decoration: none;
+}
+.rightItem {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 2px 3px;
+    text-decoration: none;
+}
+.subtitle{
+    font-weight: 400;
+    margin-top: -28px;
+    font-size: 25px;
+}
+.footer {
+    font-size: 15px;
+    color: #474747;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 420px;
+}
+.footer a{
+    color: #474747;
+}
+.footer ion-icon {
+    font-size: 20px;
+}
+.box{
+    background-color: #1F2632;
+    color: white;
+    border-color: #1F2632;
+    text-align: left;
+    padding-bottom: 1%;
+    padding-right: 5%;
+    padding-left: 3%;
+    padding-top: -5%;
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    width: 40%;
+    margin-right: 4px;
+    margin-bottom: 20px;
+    transition: transform .2s;
+}
+.box:hover{
+    transform: scale(1.03);
+}
+.box a, p {
+    text-decoration: none;
+    font-size: 20px;
+}
+.smallBox{
+    text-align: left;
+    padding-right: 1%;
+    padding-left: 1%;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    width: fit-content;
+    margin-right: 4px;
+    margin-bottom: 20px;
+    border-color: transparent;
+}
+.smallBox a{
+    text-decoration: none;
+    font-size: 16px;
+}
+.smallBox p{
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#boxes {
+    background-color: #1F2632;
+    text-decoration: none;
+    color: white;
+    margin-top: -5px;
+}
+
+img, video {
+    height:50%;
+    width:auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+@media (max-width: 600px) {
+    p{
+        font-size: 19px;
+    }
+    h1{
+        font-size: 37px;
+    }
+    .subtitle{
+        font-size: 25px;
+        margin-top: -35px;
+    }
+    img{
+        max-width: 100%;
+        height:auto;
+        margin-right:auto;
+        margin-left:auto;
+        display:block;
+      }
+    .box {
+        border-radius: 16px;
+        padding-bottom: 10%;
+        width: 90%;
+
+    }
+
+}
+@media (max-width: 350px) {
+    p{
+        font-size: 17px;
+    }
+    h1{
+        font-size: 32px;
+    }
+    .subtitle{
+        font-size: 24px;
+        margin-top: -28px;
+    }
+    .navbar{
+        font-size: 12px;
+    }
+}

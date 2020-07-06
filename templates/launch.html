@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"/>
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <title>{{launch[1]}}</title>
+</head>
+<body>
+    <h1>{{launch[1]}}</h1>
+    <h2 class="subtitle">{{ launch[6] }} - {{ status }}</h2>
+    <div style="text-align: left;">
+    <h2>Quick Notes</h2>
+    <ul>
+      <li><p>Date: {{ launch[7] }}</p></li>
+      <li><p>State: {{ state }}</p></li>
+      <li><p>Agency: {{ launch[9]["name"]}}</p></li>
+    </ul>
+    <br>
+    <h2>Description</h2>
+    <p>{{ launch[3] }}</p>
+    <br>
+    <h2>Launch location</h2>
+    <div id="map" style="height: 250px; width: 90%;"></div>
+    <p style="color: #AAAAAA;">{{ launch[2] }}</p>
+    <br>
+    <h2>Agency</h2>
+    <p>The launch is managed by the {{ launch[9]["name"]}}, which is a {{ agency[0] }} agency.</p>
+    <p>{{ agency[1] }}</p>
+  </div>
+</body>
+<script type="text/javascript">
+    var lat = {{ launch[5][0] }};
+    var long = {{ launch[5][1] }};
+    // The first parameter are the coordinates of the center of the map
+    // The second parameter is the zoom level
+    var map = L.map('map').setView([lat, long], 5);
+    L.marker([lat, long]).addTo(map)
+
+    
+    // {s}, {z}, {x} and {y} are placeholders for map tiles
+    // {x} and {y} are the x/y of where you are on the map
+    // {z} is the zoom level
+    // {s} is the subdomain of cartodb
+      var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+    });
+    
+    // Now add the layer onto the map
+    map.addLayer(layer);
+  </script>
+</html>
