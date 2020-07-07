@@ -21,8 +21,8 @@ p{
     background-color: #1A202C;
 }
 h1{
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 800;
 }
 ion-icon {
     font-size: 26px;
@@ -63,14 +63,13 @@ ion-icon {
 .subtitle{
     font-weight: 400;
     margin-top: -28px;
-    font-size: 25px;
+    font-size: 30px;
 }
 .footer {
     font-size: 15px;
     color: #474747;
     text-decoration: none;
     text-align: center;
-    padding-top: 420px;
 }
 .footer a{
     color: #474747;
@@ -90,7 +89,7 @@ ion-icon {
     border-radius: 20px;
     border-width: 1px;
     border-style: solid;
-    width: 40%;
+    width: 90%;
     margin-right: 4px;
     margin-bottom: 20px;
     transition: transform .2s;
@@ -142,10 +141,10 @@ img, video {
         font-size: 19px;
     }
     h1{
-        font-size: 30px;
+        font-size: 35px;
     }
     .subtitle{
-        font-size: 23px;
+        font-size: 25px;
         margin-top: -27px;
     }
     img{

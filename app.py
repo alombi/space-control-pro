@@ -15,8 +15,11 @@ launch5 = data[5]
 
 @app.route('/')
 def index():
-    return render_template('index.html', data = data)
+    return render_template('index.html')
 
+@app.route('/upcoming')
+def upcoming():
+    return render_template('upcoming.html', data = data)
 @app.route('/dev')
 def developing():
     return req

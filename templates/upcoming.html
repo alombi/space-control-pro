@@ -6,27 +6,27 @@
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
     <title>Space Control Pro</title>
 </head>
-<header>
+<header style="text-align: left;">
     <h1>Space Control Pro</h1>
     <h2 class="subtitle">Upcoming Launches</h2>
     <p><br></p>
 </header>
 <body>
 
-<div style="text-align: left; margin-bottom: 430px;">
+<div style="text-align: left; margin-bottom: 100px;">
     {% for launch in data %}
     {% if launch[0] == 1 %}
-    <div class="box" style="text-decoration: none; float: left;">
+    <div class="box" style="text-decoration: none;">
     {% elif launch[0] == 2 %}
-    <div class="box" style="text-decoration: none; float: right;">
+    <div class="box" style="text-decoration: none;">
     {% elif launch[0] == 3 %}
-    <div class="box" style="text-decoration: none; float: left;">
+    <div class="box" style="text-decoration: none;">
     {% elif launch[0] == 4 %}
-    <div class="box" style="text-decoration: none; float: right;">
+    <div class="box" style="text-decoration: none;">
     {% elif launch[0] == 5 %}
-    <div class="box" style="text-decoration: none; float: left;">
+    <div class="box" style="text-decoration: none;">
     {% elif launch[0] == 6 %}
-    <div class="box" style="text-decoration: none; float: right;">
+    <div class="box" style="text-decoration: none;">
     {% endif %}
         <a href="{{ launch[0]}}" style="text-decoration: none;">
             <h4 style="font-size: 25px; color: aliceblue;">{{launch[1]}}</h4>
@@ -39,6 +39,6 @@
 </div>
 
 <p class="footer">© 2020 Space Control Pro <br>
-    Developed and Designed by <a href="https://alombi.xyz">alombi</a>. Thanks for using</p>
+    Developed and Designed by <a href="https://alombi.xyz">alombi</a>.</p>
 </body>
 </html>
