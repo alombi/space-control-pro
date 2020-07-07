@@ -15,7 +15,7 @@ launch5 = data[5]
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', launch = data[0])
 
 @app.route('/upcoming')
 def upcoming():

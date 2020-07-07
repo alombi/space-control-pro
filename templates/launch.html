@@ -10,11 +10,15 @@
    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
+
 <title>{{launch[1]}}</title>
 </head>
 <body>
+  <a style="text-align: left; font-size: 15px; color: #AAAAAA; text-decoration: none; float: left;" href="/upcoming" >Back</a>
+  <br>
+
     <h1>{{launch[1]}}</h1>
-    <h2 class="subtitle">{{ launch[6] }} - {{ status }}</h2>
+    <h2 class="subtitle" style="color: chartreuse;">{{ launch[6] }} - {{ status }}</h2>
     <div style="text-align: left;">
     <h2>Quick Notes</h2>
     <p>Date: {{ launch[7] }}</p>
@@ -32,6 +36,10 @@
     <p>The launch is managed by the {{ launch[9]["name"]}}, which is a {{ agency[0] }} agency.</p>
     <p>{{ agency[1] }}</p>
   </div>
+
+  <p><br></p>
+  <p class="footer">© 2020 Space Control Pro <br>
+    Developed and Designed by <a href="https://alombi.xyz">alombi</a>.</p>
 </body>
 <script type="text/javascript">
 var lat = {{ launch[5][0] }}
