@@ -19,6 +19,9 @@
 
     <h1>{{launch[1]}}</h1>
     <h2 class="subtitle" style="color: chartreuse;">{{ launch[6] }} - {{ status }}</h2>
+    {% if 'youtube' in launch[12] %}
+    <iframe width="90%" height="472" src="{{ launch[12] }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% endif %}
     <div style="text-align: left;">
     <h2>Quick Notes</h2>
     <p>Date: {{ launch[7] }}</p>
@@ -31,10 +34,23 @@
     <h2>Launch location</h2>
     <div id="mapid" style="width: 90%; height: 400px;"></div>    
     <p style="color: #AAAAAA;">{{ launch[2] }}</p>
+    {% if launch[10] != '' %}
+    <p><a href="{{ launch[10] }}">Open Wiki</a></p>
+    {% endif %}
     <br>
     <h2>Agency</h2>
     <p>The launch is managed by the {{ launch[9]["name"]}}, which is a {{ agency[0] }} agency.</p>
     <p>{{ agency[1] }}</p>
+    <br>
+    <h2>Rocket</h2>
+    {% if rocket["agencies"] != None %}
+    <p>The rocket used is the {{ rocket["name"] }}, built by the {{ rocket["agencies"][0]["name"]}} ({{ rocket["agencies"][0]["countryCode"] }})
+    {% else %}
+    <p>The rocket used is the {{ rocket["name"] }}
+    {% endif %}
+    <p><a href="{{ rocket["wikiURL"] }}">Open Wiki</a></p>
+    </p>
+    <img src="{{ rocket["imageURL"] }}" alt="" style="width: 50%; height: auto;">
   </div>
 
   <p><br></p>

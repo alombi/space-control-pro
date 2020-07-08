@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
     <title>Space Control Pro</title>
 </head>
+
 <header style="text-align: center;">
     <h1>Space Control Pro</h1>
     <h2 class="subtitle" style="color: chartreuse;">Spaceflights tracker and more</h2>
@@ -17,7 +18,7 @@
     <br>
 </div>
     <h2 style="text-align: left;">Next launch - {{ launch[7] }}</h2>
-<div style="text-align: left; margin-bottom: 100px;">
+<div style="text-align: left; margin-bottom: 80px;">
 
     <div class="box" style="text-decoration: none;">
         <a href="{{ launch[0]}}" style="text-decoration: none;">
@@ -27,10 +28,40 @@
         </a>
     </div>
     <a style="color: chartreuse;" href="/upcoming">See more upcoming launches</a>
+    <br><br>
+<h2>Browse the site</h2>
+<div class="box" style="text-decoration: none;">
+    <a href="/launches" style="text-decoration: none;">
+        <h4 style="font-size: 25px; color: chartreuse;">Browse launches</h4>
+        <p id="boxes" style="margin-top: -22px;">Explore the spaceflights' database</p>
+        <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">Space Control Pro</p>
+    </a>
+</div>
+<div class="box" style="text-decoration: none;">
+    <a href="/agencies" style="text-decoration: none;">
+        <h4 style="font-size: 25px; color: chartreuse;">Browse agencies</h4>
+        <p id="boxes" style="margin-top: -22px;">Explore the agencies' database</p>
+        <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">Space Control Pro</p>
+    </a>
+</div>
+<div class="box" style="text-decoration: none;">
+    <a href="/upcoming" style="text-decoration: none;">
+        <h4 style="font-size: 25px; color: chartreuse;">Upcoming launches</h4>
+        <p id="boxes" style="margin-top: -22px;">Check the next launches</p>
+        <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">Space Control Pro</p>
+    </a>
+</div>
+<div class="box" style="text-decoration: none;">
+    <a href="/credits" style="text-decoration: none;">
+        <h4 style="font-size: 25px; color: chartreuse;">Credits</h4>
+        <p id="boxes" style="margin-top: -22px;">See more about the app, the developer and the data's source</p>
+        <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">Space Control Pro</p>
+    </a>
+</div>
 </div>
 </div>
 
 <p class="footer">© 2020 Space Control Pro <br>
-    Developed and Designed by <a href="https://alombi.xyz">alombi</a>.</p>
+    Developed and Designed by <a href="https://alombi.xyz">alombi</a>.
 </body>
 </html>

@@ -1,4 +1,15 @@
-#navbar{
+input{
+    background-color:#1F2632 ;
+    color: white;
+    font-size: 21px;
+    border: #1F2632;
+    border-radius: 6px;
+    border-width: 2px;
+}
+a {
+    color: #0068DA;
+}
+#launch{
     display: none;
 }
 button{
@@ -31,35 +42,6 @@ ion-icon {
 .icons {
       color:black;
   }
-.navbar{
-    display: inline;
-    list-style-type: none;
-    overflow: hidden;
-}
-.navbar a{
-    color: #AAAAAA;
-    font-size: smaller;
-    text-decoration: none;
-}
-#active {
-    color: #FFFFFF;
-}
-.leftItem{
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 2px 10px;
-    text-decoration: none;
-}
-.rightItem {
-    float: right;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 2px 3px;
-    text-decoration: none;
-}
 .subtitle{
     font-weight: 400;
     margin-top: -28px;
@@ -101,6 +83,13 @@ ion-icon {
     text-decoration: none;
     font-size: 20px;
 }
+#more{
+    background-color:white ;
+}
+#more:hover{
+    transform:none ;
+}
+
 .smallBox{
     text-align: left;
     padding-right: 1%;
@@ -140,6 +129,9 @@ img, video {
     p{
         font-size: 19px;
     }
+    input{
+        font-size: 19px;
+    }
     h1{
         font-size: 31px;
     }
@@ -166,6 +158,9 @@ img, video {
     p{
         font-size: 17px;
     }
+    input{
+        font-size: 15px;
+    }
     h1{
         font-size: 25px;
     }
@@ -176,7 +171,7 @@ img, video {
         font-size: 18px;
         margin-top: -19px;
     }
-    .navbar{
+    .launch{
         font-size: 12px;
     }
 }
