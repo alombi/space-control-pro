@@ -23,7 +23,11 @@ def home():
         rocket = req["launches"][index]["rocket"]
         liveStream = req["launches"][index]["vidURLs"]
         if liveStream != []:
-            liveStream = 'https://www.youtube.com/embed/' + liveStream[0].split('=')[1]
+            try:
+                element = liveStream[0].split('=')[1]
+            except:
+                element = liveStream[0].split('=')[0][1]
+            liveStream = 'https://www.youtube.com/embed/' + element
         
         if index == 0:
             launch = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream]

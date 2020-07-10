@@ -1,7 +1,7 @@
 import requests
 from flask import Flask, render_template, url_for, request, redirect
-from grabber import *
-from home import *
+from grabber import detect
+from home import home
 
 app = Flask(__name__)
 
@@ -32,7 +32,7 @@ def launches():
         while index > 0 :
             name = launchReq["launches"][index]["name"]
             date = launchReq["launches"][index]["net"]
-
+            
             location = launchReq["launches"][index]["location"]["name"]
             if 'People\'s Republic of China' in location:
                 location = location.replace('People\'s Republic of China', 'China')
@@ -63,7 +63,7 @@ def launches():
             liveStream = launchReq["launches"][index]["vidURLs"]
             if liveStream != []:
                 liveStream = 'https://www.youtube.com/embed/' + liveStream[0].split('=')[1]
-
+            
             launch = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream]
             index = index - 1
             data.append(launch)
@@ -87,7 +87,7 @@ def one():
     agencyReq = requests.get(agencyUrl).json()
     agencyType = agencyReq["types"][0]["name"]
     agencyInfoUrl = launch[9]["wikiURL"]
-    agencyInfo = Detect(agencyInfoUrl)
+    agencyInfo = detect(agencyInfoUrl)
     return render_template('launch.html', launch=launch, status = status, state = state, agency= [agencyType, agencyInfo], rocket = launch[11])
 
 @app.route('/2')
@@ -103,7 +103,7 @@ def two():
     agencyReq = requests.get(agencyUrl).json()
     agencyType = agencyReq["types"][0]["name"]
     agencyInfoUrl = launch[9]["wikiURL"]
-    agencyInfo = Detect(agencyInfoUrl)
+    agencyInfo = detect(agencyInfoUrl)
     return render_template('launch.html', launch=launch, status = status, state = state, agency= [agencyType, agencyInfo], rocket = launch[11])
 
 @app.route('/3')
@@ -119,7 +119,7 @@ def three():
     agencyReq = requests.get(agencyUrl).json()
     agencyType = agencyReq["types"][0]["name"]
     agencyInfoUrl = launch[9]["wikiURL"]
-    agencyInfo = Detect(agencyInfoUrl)
+    agencyInfo = detect(agencyInfoUrl)
     return render_template('launch.html', launch=launch, status = status, state = state, agency= [agencyType, agencyInfo], rocket = launch[11])
 
 @app.route('/4')
@@ -135,7 +135,7 @@ def four():
     agencyReq = requests.get(agencyUrl).json()
     agencyType = agencyReq["types"][0]["name"]
     agencyInfoUrl = launch[9]["wikiURL"]
-    agencyInfo = Detect(agencyInfoUrl)
+    agencyInfo = detect(agencyInfoUrl)
     return render_template('launch.html', launch=launch, status = status, state = state, agency= [agencyType, agencyInfo], rocket = launch[11])
 
 @app.route('/5')
@@ -151,7 +151,7 @@ def five():
     agencyReq = requests.get(agencyUrl).json()
     agencyType = agencyReq["types"][0]["name"]
     agencyInfoUrl = launch[9]["wikiURL"]
-    agencyInfo = Detect(agencyInfoUrl)
+    agencyInfo = detect(agencyInfoUrl)
     return render_template('launch.html', launch=launch, status = status, state = state, agency= [agencyType, agencyInfo], rocket = launch[11])
 
 @app.route('/6')
@@ -167,7 +167,7 @@ def six():
     agencyReq = requests.get(agencyUrl).json()
     agencyType = agencyReq["types"][0]["name"]
     agencyInfoUrl = launch[9]["wikiURL"]
-    agencyInfo = Detect(agencyInfoUrl)
+    agencyInfo = detect(agencyInfoUrl)
     return render_template('launch.html', launch=launch, status = status, state = state, agency= [agencyType, agencyInfo], rocket = launch[11])
 
 @app.route('/credits')

@@ -1,5 +1,5 @@
 import bs4, requests
-def Detect(url):
+def detect(url):
     req = requests.get(url)
     req.raise_for_status()
     soup = bs4.BeautifulSoup(req.text, 'html.parser')
