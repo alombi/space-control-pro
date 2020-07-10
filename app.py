@@ -32,7 +32,7 @@ def launches():
         while index > 0 :
             name = launchReq["launches"][index]["name"]
             date = launchReq["launches"][index]["net"]
-            
+
             location = launchReq["launches"][index]["location"]["name"]
             if 'People\'s Republic of China' in location:
                 location = location.replace('People\'s Republic of China', 'China')
@@ -63,7 +63,7 @@ def launches():
             liveStream = launchReq["launches"][index]["vidURLs"]
             if liveStream != []:
                 liveStream = 'https://www.youtube.com/embed/' + liveStream[0].split('=')[1]
-            
+
             launch = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream]
             index = index - 1
             data.append(launch)
