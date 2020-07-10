@@ -13,12 +13,6 @@ launch3 = data[3]
 launch4 = data[4]
 launch5 = data[5]
 
-@app.route('/dev')
-def developing():
-    url = 'https://launchlibrary.net/1.3/launch/next/6'
-    req = requests.get(url).json()
-    return req
-
 @app.route('/')
 def index():
     return render_template('index.html', launch = data[0])
@@ -176,13 +170,9 @@ def six():
     agencyInfo = Detect(agencyInfoUrl)
     return render_template('launch.html', launch=launch, status = status, state = state, agency= [agencyType, agencyInfo], rocket = launch[11])
 
-@app.route('/agencies')
-def coming():
-    return render_template('coming_soon.html')
-
 @app.route('/credits')
 def credits():
     return render_template('credits.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
