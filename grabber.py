@@ -9,6 +9,8 @@ def detect(url):
     if elems == [] or '':
         elems = soup.select('#mw-content-text > div > p:nth-child(4)')
     if elems == [] or 'mw-empty-elt' in str(elems):
+        elems = soup.select('#mw-content-text > div > p:nth-child(5)')
+    if elems == [] or 'mw-empty-elt' in str(elems):
         elems = soup.select('#mw-content-text > div > p:nth-child(7)')
 
     res = elems[0].text.strip()

@@ -34,23 +34,33 @@
     <h2>Launch location</h2>
     <div id="mapid" style="width: 90%; height: 400px;"></div>    
     <p style="color: #AAAAAA;">{{ launch[2] }}</p>
+
     {% if launch[10] != '' %}
     <p><a href="{{ launch[10] }}">Open Wiki</a></p>
     {% endif %}
+
     <br>
     <h2>Agency</h2>
     <p>The launch is managed by the {{ launch[9]["name"]}}, which is a {{ agency[0] }} agency.</p>
     <p>{{ agency[1] }}</p>
     <br>
     <h2>Rocket</h2>
+
     {% if rocket["agencies"] != None %}
     <p>The rocket used is the {{ rocket["name"] }}, built by the {{ rocket["agencies"][0]["name"]}} ({{ rocket["agencies"][0]["countryCode"] }})
     {% else %}
     <p>The rocket used is the {{ rocket["name"] }}
     {% endif %}
+
+    {% if rocket["wikiURL"] != '' %}
     <p><a href="{{ rocket["wikiURL"] }}">Open Wiki</a></p>
+    {% endif %}
     </p>
+    {% if launch[13] != str %}
+    <img src="https://launchlibrary1.nyc3.digitaloceanspaces.com/RocketImages/placeholder_1920.png" alt="" style="width: 50%; height: auto;">
+    {% else %}
     <img src="{{ rocket["imageURL"] }}" alt="" style="width: 50%; height: auto;">
+    {% endif%}
   </div>
 
   <p><br></p>

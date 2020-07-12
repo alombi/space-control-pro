@@ -21,6 +21,7 @@ def home():
         agency = req["launches"][index]["lsp"]
         locationURLs = req["launches"][index]["location"]["pads"][0]["wikiURL"]
         rocket = req["launches"][index]["rocket"]
+        rocketType = type(rocket)
         liveStream = req["launches"][index]["vidURLs"]
         if liveStream != []:
             try:
@@ -30,17 +31,17 @@ def home():
             liveStream = 'https://www.youtube.com/embed/' + element
         
         if index == 0:
-            launch = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream]
+            launch = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream, rocketType]
         elif index == 1:
-            launch1 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream]
+            launch1 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream, rocketType]
         elif index == 2:
-            launch2 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream]
+            launch2 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream, rocketType]
         elif index == 3:
-            launch3 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream]
+            launch3 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream, rocketType]
         elif index == 4:
-            launch4 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream]
+            launch4 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream, rocketType]
         elif index == 5:
-            launch5 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream]
+            launch5 = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream, rocketType]
 
     data = [launch, launch1, launch2, launch3, launch4, launch5]
     return data
