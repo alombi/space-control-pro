@@ -24,11 +24,14 @@ def home():
         rocketType = type(rocket)
         liveStream = req["launches"][index]["vidURLs"]
         if liveStream != []:
-            try:
-                element = liveStream[0].split('=')[1]
-            except:
-                element = liveStream[0].split('=')[0][1]
-            liveStream = 'https://www.youtube.com/embed/' + element
+            if 'youtube' in liveStream[0]:
+                try:
+                    element = liveStream[0].split('=')[1]
+                except:
+                    element = liveStream[0].split('=')[0][1]
+                liveStream = 'https://www.youtube.com/embed/' + element
+            else:
+                liveStream = liveStream[0]
         
         if index == 0:
             launch = [address, name, location, desc, descShort, mapCoordinates, typeOfMission, date, status, agency, locationURLs, rocket, liveStream, rocketType]
