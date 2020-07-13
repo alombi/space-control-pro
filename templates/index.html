@@ -6,10 +6,12 @@
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
     <title>Space Control Pro</title>
 </head>
-
-<header style="text-align: center;">
+<div class="tesla || classic" style="padding-top: 10px;">
+    <button style="float: right"class="btn-toggle"><ion-icon id="button" name="contrast-outline" style="color: white; font-size: 21px;"></ion-icon></button>
+    
+<header style="text-align: center; padding-top: 15px;">
     <h1>Space Control Pro</h1>
-    <h2 class="subtitle" style="color: chartreuse;">Spaceflights tracker and more</h2>
+    <h2 class="subtitle">Spaceflights tracker and more</h2>
     <p><br></p>
 </header>
 <body>
@@ -22,31 +24,31 @@
 
     <div class="box" style="text-decoration: none;">
         <a href="{{ launch[0]}}" style="text-decoration: none;">
-            <h4 style="font-size: 25px; color: aliceblue;">{{launch[1]}}</h4>
+            <h4 style="font-size: 25px;" class="subtitle-box">{{launch[1]}}</h4>
             <p id="boxes" style="margin-top: -22px;">{{launch[3]}}</p>
             <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">{{launch[2]}}</p>
         </a>
     </div>
-    <a style="color: chartreuse;" href="/upcoming">See more upcoming launches</a>
+    <a class="subtitle-box" href="/upcoming">See more upcoming launches</a>
     <br><br>
 <h2>Browse the site</h2>
 <div class="box" style="text-decoration: none;">
     <a href="/launches" style="text-decoration: none;">
-        <h4 style="font-size: 25px; color: chartreuse;">Browse launches</h4>
+        <h4 style="font-size: 25px;" class="subtitle-box">Browse launches</h4>
         <p id="boxes" style="margin-top: -22px;">Explore the spaceflights' database</p>
         <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">Space Control Pro</p>
     </a>
 </div>
 <div class="box" style="text-decoration: none;">
     <a href="/upcoming" style="text-decoration: none;">
-        <h4 style="font-size: 25px; color: chartreuse;">Upcoming launches</h4>
+        <h4 style="font-size: 25px;" class="subtitle-box">Upcoming launches</h4>
         <p id="boxes" style="margin-top: -22px;">Check the next launches</p>
         <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">Space Control Pro</p>
     </a>
 </div>
 <div class="box" style="text-decoration: none;">
     <a href="/credits" style="text-decoration: none;">
-        <h4 style="font-size: 25px; color: chartreuse;">Credits</h4>
+        <h4 style="font-size: 25px;" class="subtitle-box">Credits</h4>
         <p id="boxes" style="margin-top: -22px;">See more about the app, the developer and the data's source</p>
         <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">Space Control Pro</p>
     </a>
@@ -55,6 +57,42 @@
 </div>
 
 <p class="footer">© 2020 Space Control Pro <br>
-    Developed and Designed by <a href="https://alombi.xyz">alombi</a>.
+    Developed and Designed by <a href="https://alombi.xyz">alombi</a>.</p>
+</div>
+<script>
+
+const btn = document.querySelector('.btn-toggle');
+
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme == "tesla") {
+  document.body.classList.add("tesla");
+}
+
+btn.addEventListener('click', function() {
+  document.body.classList.toggle('tesla');
+  var name = document.getElementById("button").name;
+
+  if (name === 'contrast-outline'){
+    document.getElementById("button").name = 'contrast'
+    var name = 'contrast'
+  } else {
+    document.getElementById("button").name = 'contrast-outline'
+    var name = 'contrast'
+  }
+  let theme = "classic";
+  // If the body contains the .dark-theme class...
+  if (document.body.classList.contains("tesla")) {
+    // ...then let's make the theme dark
+    theme = "tesla";
+  }
+  // Then save the choice in localStorage
+  localStorage.setItem("theme", theme);
+})
+  
+  
+</script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
 </body>
 </html>

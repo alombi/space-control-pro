@@ -31,6 +31,7 @@ p{
     font-size: 21px;
     background-color: #1A202C;
 }
+
 h1{
     font-size: 50px;
     font-weight: 800;
@@ -46,6 +47,10 @@ ion-icon {
     font-weight: 400;
     margin-top: -28px;
     font-size: 30px;
+    color: chartreuse;
+}
+.subtitle-box{
+    color: chartreuse;
 }
 .footer {
     font-size: 15px;
@@ -174,4 +179,24 @@ img, video {
     .launch{
         font-size: 12px;
     }
+}
+body.tesla{
+    background-color: black;
+    color: white;
+}
+body.tesla p{
+    background-color: black;
+}
+body.tesla .subtitle{
+    color: #cc0000;
+}
+body.tesla .subtitle-box{
+    color: #cc0000;
+}
+body.tesla .box{
+    background-color: #1C1C1E;
+    border-color: #1C1C1E;
+}
+body.tesla #boxes {
+    background-color: #1C1C1E;
 }

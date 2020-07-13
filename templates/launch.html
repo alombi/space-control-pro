@@ -13,12 +13,14 @@
 
 <title>{{launch[1]}}</title>
 </head>
+<div class="tesla || classic" style="padding-top: 10px;">
+  <button style="float: right"class="btn-toggle"><ion-icon id="button" name="contrast-outline" style="color: white; font-size: 21px;"></ion-icon></button>
 <body>
   <a style="text-align: left; font-size: 15px; color: #AAAAAA; text-decoration: none; float: left;" href="/upcoming" >Back</a>
   <br>
 
     <h1>{{launch[1]}}</h1>
-    <h2 class="subtitle" style="color: chartreuse;">{{ launch[6] }} - {{ status }}</h2>
+    <h2 class="subtitle">{{ launch[6] }} - {{ status }}</h2>
     {% if 'youtube' in launch[12] %}
     <iframe width="90%" height="472" src="{{ launch[12] }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     {% endif %}
@@ -66,7 +68,43 @@
   <p><br></p>
   <p class="footer">© 2020 Space Control Pro <br>
     Developed and Designed by <a href="https://alombi.xyz">alombi</a>.</p>
+    </div>
+    <script>
+
+      const btn = document.querySelector('.btn-toggle');
+      
+      const currentTheme = localStorage.getItem("theme");
+      
+      if (currentTheme == "tesla") {
+        document.body.classList.add("tesla");
+      }
+      
+      btn.addEventListener('click', function() {
+        document.body.classList.toggle('tesla');
+        var name = document.getElementById("button").name;
+      
+        if (name === 'contrast-outline'){
+          document.getElementById("button").name = 'contrast'
+          var name = 'contrast'
+        } else {
+          document.getElementById("button").name = 'contrast-outline'
+          var name = 'contrast'
+        }
+        let theme = "classic";
+        // If the body contains the .dark-theme class...
+        if (document.body.classList.contains("tesla")) {
+          // ...then let's make the theme dark
+          theme = "tesla";
+        }
+        // Then save the choice in localStorage
+        localStorage.setItem("theme", theme);
+      })
+        
+        
+      </script>
+      <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
+
 <script type="text/javascript">
 var lat = {{ launch[5][0] }}
 var long = {{ launch[5][1] }}
@@ -82,8 +120,5 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   zoomOffset: -1
 }).addTo(mymap);
 var marker = L.marker([lat, long]).addTo(mymap);
-
-    
-      
   </script>
 </html>
