@@ -11,12 +11,18 @@ def home():
         if 'People\'s Republic of China' in location:
             location = location.replace('People\'s Republic of China', 'China')
         address = index + 1
-        desc = str(req["launches"][index]["missions"][0]["description"])
+        try:
+            desc = str(req["launches"][index]["missions"][0]["description"])
+        except:
+            desc = 'No informations found'
         descShort = desc[:200]
         if len(descShort) > 199:
             descShort = descShort + '...'
         mapCoordinates = [req["launches"][index]["location"]["pads"][0]['latitude'], req["launches"][index]["location"]["pads"][0]['longitude']]
-        typeOfMission = req["launches"][index]["missions"][0]["typeName"]
+        try:
+            typeOfMission = req["launches"][index]["missions"][0]["typeName"]
+        except:
+            typeOfMission = 'No informations found'
         status = req["launches"][index]["status"]
         agency = req["launches"][index]["lsp"]
         locationURLs = req["launches"][index]["location"]["pads"][0]["wikiURL"]
