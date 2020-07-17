@@ -167,6 +167,7 @@ img, video {
     #apod{
         margin-left: auto;
         margin-right: auto;
+        width: 75%;
     }
 
 }
@@ -193,6 +194,7 @@ img, video {
     #apod{
         margin-left: auto;
         margin-right: auto;
+        width: 75%;
     }
 }
 body.tesla{
