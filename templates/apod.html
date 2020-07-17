@@ -4,29 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
-    <title>Space Control Pro</title>
+<script src="{{url_for('static', filename='main.js')}}"></script>
+    <title>NASA APOD</title>
 </head>
-<div class="tesla || classic" style="padding-top: 10px;">
+<div class="tesla || light" style="padding-top: 10px;">
     <button style="float: right"class="btn-toggle"><ion-icon id="button" name="contrast-outline" style="color: white; font-size: 21px;"></ion-icon></button>
-    
-<header style="text-align: center; padding-top: 15px;">
-    <h1>NASA'a photo of the day</h1>
-    <h2 class="subtitle">{{ apod[4] }}</h2>
-    <p><br></p>
-</header>
 <body>
     
+<div id="page">
+<div style="text-align: left;">
+    <a style="text-align: left; font-size: 15px; color: #AAAAAA; text-decoration: none; float: left;" href="/" >Back</a>
+    <br>
+    <h1 style="text-align: center;">NASA'a photo of the day</h1>
+    <h2 class="subtitle" style="text-align: center;">{{ apod[4] }}</h2>
+    <p><br></p>
+</div>
 {% if apod != False %}
-    <img src="{{ apod[1] }}" alt="" id="apod">
-    <p style="color: #AAAAAA;">{{ apod[2] }}</p>
+<img src="{{ apod[1] }}" alt="" id="apod">
+<p style="color: #AAAAAA;">{{ apod[2] }}</p>
 {% else %}
-    <h2 class="subtitle">Space Control Pro can't connect to the NASA API's server. Try again later please</h2>
+<h2 class="subtitle">Space Control Pro can't connect to the NASA API's server. Try again later please</h2>
 {% endif %}
 <br><br>
+    <p class="footer">© 2020 Space Control Pro <br>
+        Developed and Designed by <a href="https://alombi.xyz">alombi</a>.</p>
+</div>
 
 
-<p class="footer">© 2020 Space Control Pro <br>
-    Developed and Designed by <a href="https://alombi.xyz">alombi</a>.</p>
 </div>
 <script>
 
@@ -61,7 +65,7 @@ btn.addEventListener('click', function() {
   
   
 </script>
-<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
 </body>
 </html>
