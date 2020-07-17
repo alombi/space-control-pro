@@ -2,6 +2,7 @@ import requests
 from flask import Flask, render_template, url_for, request, redirect
 from grabber import detect
 from home import home
+from nasa_apod import apod
 
 app = Flask(__name__)
 
@@ -13,9 +14,11 @@ launch3 = data[3]
 launch4 = data[4]
 launch5 = data[5]
 
+NASA = apod()
+
 @app.route('/')
 def index():
-    return render_template('index.html', launch = data[0])
+    return render_template('index.html', launch = data[0], apod = NASA)
 
 @app.route('/upcoming')
 def upcoming():
@@ -173,6 +176,10 @@ def six():
 @app.route('/credits')
 def credits():
     return render_template('credits.html')
+
+@app.route('/apod')
+def apod():
+    return render_template('apod.html', apod = NASA)
 
 if __name__ == "__main__":
     app.run(debug=False)

@@ -130,6 +130,14 @@ img, video {
     margin-left: auto;
     margin-right: auto;
   }
+  #apod {
+    width: 50%;
+    height: auto;
+    display:block;
+    margin: left;
+    margin-left: unset;
+    margin-right: unset;
+}
 @media (max-width: 600px) {
     p{
         font-size: 19px;
@@ -155,7 +163,10 @@ img, video {
         border-radius: 16px;
         padding-bottom: 10%;
         width: 90%;
-
+    }
+    #apod{
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }
@@ -178,6 +189,10 @@ img, video {
     }
     .launch{
         font-size: 12px;
+    }
+    #apod{
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 body.tesla{

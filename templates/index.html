@@ -31,6 +31,8 @@
     </div>
     <a class="subtitle-box" href="/upcoming">See more upcoming launches</a>
     <br><br>
+    
+    <br>
 <h2>Browse the site</h2>
 <div class="box" style="text-decoration: none;">
     <a href="/launches" style="text-decoration: none;">
@@ -46,6 +48,15 @@
         <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">Space Control Pro</p>
     </a>
 </div>
+{% if apod != False %}
+<div class="box" style="text-decoration: none;">
+    <a href="/apod" style="text-decoration: none;">
+        <h4 style="font-size: 25px;" class="subtitle-box">NASA's photo of the day</h4>
+        <p id="boxes" style="margin-top: -22px;">Check the today's photo</p>
+        <p id="boxes" style="color: gray; font-weight: bold; font-size: 14px;">Space Control Pro</p>
+    </a>
+</div>
+{% endif %}
 <div class="box" style="text-decoration: none;">
     <a href="/credits" style="text-decoration: none;">
         <h4 style="font-size: 25px;" class="subtitle-box">Credits</h4>

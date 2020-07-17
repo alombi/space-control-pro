@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <title>Space Control Pro</title>
+</head>
+<div class="tesla || classic" style="padding-top: 10px;">
+    <button style="float: right"class="btn-toggle"><ion-icon id="button" name="contrast-outline" style="color: white; font-size: 21px;"></ion-icon></button>
+    
+<header style="text-align: center; padding-top: 15px;">
+    <h1>NASA'a photo of the day</h1>
+    <h2 class="subtitle">{{ apod[4] }}</h2>
+    <p><br></p>
+</header>
+<body>
+{% if apod != False %}
+    <img src="{{ apod[1] }}" alt="" id="apod">
+    <p style="color: #AAAAAA;">{{ apod[2] }}</p>
+{% else %}
+    <h2 class="subtitle">Space Control Pro can't connect to the NASA API's server. Try again later please</h2>
+{% endif %}
+</div>
+</body>
+</html>
