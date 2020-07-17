@@ -134,9 +134,9 @@ img, video {
     width: 50%;
     height: auto;
     display:block;
-    margin: left;
-    margin-left: unset;
-    margin-right: unset;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 @media (max-width: 600px) {
     p{
