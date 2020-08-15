@@ -9,13 +9,15 @@
 <meta property="og:image" content="static/assets/icon.png"/>
 <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 <script src="{{url_for('static', filename='main.js')}}"></script>
-<link rel="stylesheet" type="text/css" href="../../style/addtohomescreen.css">
-<script src="../../src/addtohomescreen.js"></script>
-<script>
-addToHomescreen({
-    autostart = true
-});
-</script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="static/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="static/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="static/assets/favicon-16x16.png">
+<link rel="manifest" href="static/assets/site.webmanifest">
+<link rel="mask-icon" href="static/assets/safari-pinned-tab.svg" color="#1f2632">
+<meta name="msapplication-TileColor" content="#ff0000">
+<meta name="theme-color" content="#ffffff">
+
 </head>
 <div class="tesla || light" style="padding-top: 10px;">
     <button style="float: right"class="btn-toggle"><ion-icon id="button" name="contrast-outline" style="color: white; font-size: 21px;"></ion-icon></button>
