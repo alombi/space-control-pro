@@ -18,11 +18,11 @@ NASA = apod()
 
 @app.route('/')
 def index():
-    return render_template('index.html', launch = data[0], apod = NASA)
+    return render_template('index.html', launch = data[0], apod = NASA, title="Space Control Pro")
 
 @app.route('/upcoming')
 def upcoming():
-    return render_template('upcoming.html', data = data)
+    return render_template('upcoming.html', data = data, title="Upcoming Launches")
 
 @app.route('/launches', methods=['POST', 'GET'])
 def launches():

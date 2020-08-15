@@ -1,20 +1,8 @@
-<!DOCTYPE HTML>
-<html>
+{% extends "base.html" %}
+{% block content %}
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="Space Control Pro" />
-<meta property="og:description" content="A powerful web app for tracking space launches"/>
-<meta property="og:type" content="website" />
-<meta property="og:image" content="static/assets/icon.png"/>
-<link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
-<script src="{{url_for('static', filename='main.js')}}"></script>
-    <title>NASA APOD</title>
+    <title>NASA Photo of the Day</title>
 </head>
-<div class="tesla || light" style="padding-top: 10px;">
-    <button style="float: right"class="btn-toggle"><ion-icon id="button" name="contrast-outline" style="color: white; font-size: 21px;"></ion-icon></button>
-<body>
-    
 <div id="page">
 <div style="text-align: left;">
     <a style="text-align: left; font-size: 15px; color: #AAAAAA; text-decoration: none; float: left;" href="/" >Back</a>
@@ -30,46 +18,4 @@
 <h2 class="subtitle">Space Control Pro can't connect to the NASA API's server. Try again later please</h2>
 {% endif %}
 <br><br>
-    <p class="footer">© 2020 Space Control Pro <br>
-        Developed and Designed by <a href="https://alombi.xyz">alombi</a>.</p>
-</div>
-
-
-</div>
-<script>
-
-const btn = document.querySelector('.btn-toggle');
-
-const currentTheme = localStorage.getItem("theme");
-
-if (currentTheme == "tesla") {
-  document.body.classList.add("tesla");
-}
-
-btn.addEventListener('click', function() {
-  document.body.classList.toggle('tesla');
-  var name = document.getElementById("button").name;
-
-  if (name === 'contrast-outline'){
-    document.getElementById("button").name = 'contrast'
-    var name = 'contrast'
-  } else {
-    document.getElementById("button").name = 'contrast-outline'
-    var name = 'contrast'
-  }
-  let theme = "classic";
-  // If the body contains the .dark-theme class...
-  if (document.body.classList.contains("tesla")) {
-    // ...then let's make the theme dark
-    theme = "tesla";
-  }
-  // Then save the choice in localStorage
-  localStorage.setItem("theme", theme);
-})
-  
-  
-</script>
-<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-
-</body>
-</html>
+{% endblock %}
