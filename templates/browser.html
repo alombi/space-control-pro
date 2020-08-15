@@ -25,7 +25,7 @@
 {% for launch in data %}
 
     <div class="box" style="text-decoration: none;">
-            <h4 style="font-size: 25px; color: aliceblue;">{{ launch[1]}}</h4>
+            <h4 class="box" style="font-size: 25px;">{{ launch[1]}}</h4>
             <p id="boxes"style=" margin-top: -30px; color: gray; font-size: 14px;">{{launch[6]}} - {{launch[8]}}</p>
             <p id="boxes" >{{ launch[3] }}</p>
             <p id="boxes">Rocket is <a href="{{launch[11]["wikiURL"]}}">{{launch[11]["name"]}},</a> built by the {{launch[11]["agencies"][0]["abbrev"]}} ({{launch[11]["agencies"][0]["name"]}}).</p>
@@ -41,7 +41,7 @@
     <h2 style="text-align: left;">Suggested</h2>
     <div class="box" style="text-decoration: none;">
         <a href="/1">
-        <h4 style="font-size: 25px; color: aliceblue;">{{ suggested[1]}}</h4>
+        <h4 style="font-size: 25px;">{{ suggested[1]}}</h4>
         <p id="boxes"style=" margin-top: -30px; color: gray; font-size: 14px;">{{suggested[6]}} - {{suggested[8]}}</p>
         <p id="boxes" >{{ suggested[3] }}</p>
         <p id="boxes">Rocket is <a href="{{suggested[11]["wikiURL"]}}">{{suggested[11]["name"]}}</a>, built by the {{suggested[11]["agencies"][0]["abbrev"]}} ({{suggested[11]["agencies"][0]["name"]}}).</p>
