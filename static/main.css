@@ -1,8 +1,8 @@
 input{
-    background-color:#f2f2f2 ;
-    color: #1A202C;
+    background-color:#1F2632 ;
+    color: #f2f2f2;
     font-size: 19px;
-    border: #f2f2f2;
+    border: #1F2632;
     border-radius: 6px;
     border-width: 2px;
 }
@@ -20,8 +20,8 @@ hr{
     border: 1px solid #474747;
 }
 body{
-    background-color: white;
-    color: #1A202C;
+    background-color: #1A202C;
+    color: #f2f2f2;
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 5%;
@@ -29,9 +29,11 @@ body{
 }
 p{
     font-size: 21px;
-    background-color: white;
+    background-color: #1A202C;
 }
-
+#button{
+    color: white;
+}
 h1{
     font-size: 50px;
     font-weight: 800;
@@ -40,11 +42,8 @@ ion-icon {
     font-size: 26px;
     font-weight: bold;
   }
-#button{
-    color: #1A202C;
-}
 .icons {
-      color:black;
+      color:white;
   }
 .subtitle{
     font-weight: 400;
@@ -68,9 +67,9 @@ ion-icon {
     font-size: 20px;
 }
 .box{
-    background-color: #f2f2f2;
-    color: #1F2632;
-    border-color: #f2f2f2;
+    background-color: #1F2632;
+    color: #f2f2f2;
+    border-color: #1F2632;
     text-align: left;
     padding-bottom: 1%;
     padding-right: 5%;
@@ -90,9 +89,6 @@ ion-icon {
 .box a, p {
     text-decoration: none;
     font-size: 20px;
-}
-.box h4 {
-    color: chartreuse;
 }
 #more{
     background-color:white ;
@@ -121,11 +117,13 @@ ion-icon {
     text-decoration: none;
     font-size: 16px;
 }
-
+.box h4 {
+    color: chartreuse;
+}
 #boxes {
-    background-color: #f2f2f2;
+    background-color: #1F2632;
     text-decoration: none;
-    color: #1F2632;
+    color: #f2f2f2;
     margin-top: -5px;
 }
 
@@ -204,12 +202,11 @@ img, video {
     }
 }
 body.tesla{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 body.tesla p{
-    background-color: black;
-    color: white;
+    background-color: white;
 }
 body.tesla .subtitle{
     color: #cc0000;
@@ -218,16 +215,17 @@ body.tesla .subtitle-box{
     color: #cc0000;
 }
 body.tesla .box{
-    background-color: #1C1C1E;
-    border-color: #1C1C1E;
+    background-color: #f2f2f2;
+    border-color: #f2f2f2;
 }
 body.tesla #boxes {
-    background-color: #1C1C1E;
-    color: white;
-}
-body.tesla #button{
-    color: white;
+    background-color: #f2f2f2;
+    color:black;
 }
 body.tesla .box h4 {
     color: red;
+}
+body.tesla input{
+    background-color: #f2f2f2;
+    border-color:#f2f2f2 ;
 }
