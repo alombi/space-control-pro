@@ -229,3 +229,6 @@ body.tesla input{
     background-color: #f2f2f2;
     border-color:#f2f2f2 ;
 }
+body.tesla #button{
+  color:black;
+}
