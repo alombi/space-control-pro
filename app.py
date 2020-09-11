@@ -20,6 +20,10 @@ NASA = apod()
 def index():
     return render_template('index.html', launch = data[0], apod = NASA, title="Space Control Pro")
 
+@app.route('/more')
+def more():
+    return render_template('more.html')
+
 @app.route('/upcoming')
 def upcoming():
     return render_template('upcoming.html', data = data, title="Upcoming Launches")
