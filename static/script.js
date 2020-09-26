@@ -1,11 +1,8 @@
 // Variables used by Scriptable.
 // These must be at the very top of the file. Do not edit.
 // icon-color: deep-gray; icon-glyph: space-shuttle;
-// Script developed by alombi.
 
-// Variables used by Scriptable.
-// These must be at the very top of the file. Do not edit.
-// icon-color: deep-gray; icon-glyph: space-shuttle;
+// Script developed by alombi. Version 1.1
 
 let json = await loadItems()
 
@@ -22,14 +19,14 @@ function createWidget(json){
   w.backgroundColor = new Color("#1A202C")
   w.addSpacer(1)
   let titleTxt = w.addText(json[0])
-  titleTxt.applyHeadlineTextStyling()
+  titleTxt.font = Font.boldRoundedSystemFont(18)
   titleTxt.textColor = new Color("#FFFFFF")
   let city = json[3].split(",")[0]
   let statusTxt = w.addText(city + ", " + json[2])
-  statusTxt.applyBodyTextStyling()
+  statusTxt.font = Font.regularRoundedSystemFont(16)
   statusTxt.textColor = new Color("#AAAAAA")
   let dateTxt = w.addText(json[1])
-  dateTxt.applyBodyTextStyling()
+  dateTxt.font = Font.regularRoundedSystemFont(16)
   dateTxt.textColor = new Color("#AAAAAA")
   return w
 }
